@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#ffffff"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <RelativeLayout
+        android:layout_above="@+id/actPhotoEditView_rlSubBottoms"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.opengl.GLSurfaceView
+            android:id="@+id/actPhotoEditView_glsfv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" android:background="#000000" />
+
+        <com.mrjodev.photopicker.views.view.BugFixViewPager
+            android:layout_alignParentBottom="true"
+            android:id="@+id/actPhotoEditView_vp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </com.mrjodev.photopicker.views.view.BugFixViewPager>
+
+        <com.edmodo.cropper.CropImageView
+            android:visibility="gone"
+            android:background="#000000"
+            android:id="@+id/actPhotoEditView_ivCrop"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+
+    </RelativeLayout>
+
+
+
+    <RelativeLayout
+        android:id="@+id/actPhotoEditView_rlSubBottoms"
+        android:layout_above="@+id/actPhotoEditView_rlBottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <HorizontalScrollView
+            android:scrollbars="none"
+            android:id="@+id/actPhotoEditView_filters"
+            android:background="#ffffff"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:orientation="horizontal"
+                android:id="@+id/actPhotoEditView_vgFilters"
+                android:gravity="center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingTop="8dp" android:paddingBottom="8dp">
+                <!--GLSurfaceView넣기 -->
+
+
+            </LinearLayout>
+
+        </HorizontalScrollView>
+
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_alignParentBottom="true"
+        android:id="@+id/actPhotoEditView_rlBottom"
+        android:layout_width="match_parent"
+        android:layout_height="46dp">
+
+
+        <TextView
+            android:gravity="center"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:paddingTop="9dp" android:paddingBottom="9dp"
+            android:textColor="#ffffff"
+            android:textSize="13sp"
+            android:layout_width="85dp"
+            android:layout_height="wrap_content"
+            android:background="#c7c7c7" android:text="앨범으로"/>
+
+
+        <LinearLayout
+            android:gravity="center_vertical"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+
+            <LinearLayout
+                android:id="@+id/actPhotoEditView_vbtnRotate"
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+
+                <!--<ImageView-->
+                    <!--android:layout_marginRight="2dp"-->
+                    <!--android:adjustViewBounds="true"-->
+                    <!--android:layout_width="19dp"-->
+                    <!--android:layout_height="wrap_content" android:src="@drawable/ic_rotate"/>-->
+
+
+                <TextView
+                    android:textSize="13sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:text="우로회전"
+                    android:textColor="#dd000000"/>
+
+            </LinearLayout>
+
+            <View
+                android:layout_marginLeft="10dp" android:layout_marginRight="10dp"
+                android:layout_width="1px"
+                android:layout_height="10dp" android:background="#dd000000"/>
+
+            <LinearLayout
+                android:gravity="center"
+                android:id="@+id/actPhotoEditView_vbtnCut"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+
+                <!--<ImageView-->
+                    <!--android:layout_marginRight="2dp"-->
+                    <!--android:adjustViewBounds="true"-->
+                    <!--android:layout_width="20dp"-->
+                    <!--android:layout_height="wrap_content" android:src="@drawable/ic_cut"/>-->
+
+                <TextView
+                    android:textSize="13sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:text="사진커팅"
+                    android:textColor="#dd000000"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:gravity="center"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="5dp"
+            android:paddingTop="9dp" android:paddingBottom="9dp"
+            android:textColor="#ffffff"
+            android:textSize="13sp"
+            android:layout_width="85dp"
+            android:layout_height="wrap_content"
+            android:background="@color/colorAccent" android:text="전송(1/2)"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px" android:background="#33000000"/>
+    </RelativeLayout>
+
+
+
+
+    <ProgressBar
+        android:visibility="invisible"
+        android:layout_width="50dp"
+        android:layout_height="50dp" android:layout_centerInParent="true"
+        android:id="@+id/actPhotoEditView_vLoading"/>
+
+</RelativeLayout>

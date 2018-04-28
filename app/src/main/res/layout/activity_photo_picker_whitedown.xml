@@ -1,0 +1,193 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/actJoPickPhoto_rlContent"
+    android:background="#efefef"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_alignParentBottom="true"
+        android:id="@+id/actJoPickPhoto_rlBottom"
+        android:layout_width="match_parent"
+        android:layout_height="48dp" >
+
+        <!--<ImageView-->
+        <!--android:layout_marginLeft="12dp"-->
+        <!--android:layout_marginRight="12dp"-->
+        <!--android:id="@+id/actJoPickPhoto_ivbtnLeft"-->
+        <!--android:layout_centerVertical="true"-->
+        <!--android:layout_width="8dp"-->
+        <!--android:layout_height="wrap_content" android:adjustViewBounds="true" android:src="@drawable/icon_leftarrow_black"/>-->
+
+        <LinearLayout
+            android:background="#ffffff"
+
+            android:gravity="center_vertical"
+            android:layout_centerVertical="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <LinearLayout
+                android:id="@+id/actPhotoPicker_vbtnShowAlbum"
+                android:background="?android:selectableItemBackground"
+                android:paddingRight="12dp"
+                android:paddingLeft="12dp"
+                android:gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:layout_marginRight="8dp"
+                    android:layout_width="20dp"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_photo_circle"/>
+
+                <TextView
+                    android:id="@+id/actPhotoPicker_tvAlbumName"
+                    android:scaleX="0.98"
+                    android:layout_marginRight="5dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:textColor="#ee000000"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:textSize="14.5dp" android:text="전체 사진 앨범"/>
+
+                <!--fa418f-->
+                <ImageView
+                    android:id="@+id/actPhotoPicker_ivNameArrow"
+                    android:layout_width="10dp"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true" android:src="@drawable/icon_uparrow_pink"/>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+        <!--버튼셋-->
+        <LinearLayout
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:id="@+id/actJoPickPhoto_llRight"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginRight="5dp"
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="?android:selectableItemBackground">
+
+                <TextView
+                    android:scaleX="0.98"
+                    android:gravity="center"
+                    android:background="#c7c7c7"
+                    android:paddingLeft="15dp" android:paddingRight="15dp"
+                    android:textColor="#ffffff"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" android:textSize="14dp" android:text="취소"/>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:id="@+id/actPhotoPicker_llbtnOk"
+                android:layout_marginRight="5dp"
+                android:paddingLeft="15dp" android:paddingRight="15dp"
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@color/colorAccent">
+
+                <ImageView
+                    android:layout_marginRight="7dp"
+                    android:adjustViewBounds="true"
+                    android:layout_width="10dp"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_check"/>
+                <TextView
+                    android:scaleX="0.98"
+                    android:gravity="center"
+                    android:textColor="#ffffff"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" android:textSize="14dp" android:text="확인"/>
+            </LinearLayout>
+
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px" android:background="#22000000"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" android:layout_above="@id/actJoPickPhoto_rlBottom">
+        <android.support.v7.widget.RecyclerView
+            android:paddingLeft="0.2dp" android:paddingRight="0.2dp"
+            android:id="@+id/actJoPickPhoto_rcv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <ProgressBar
+            android:layout_width="30dp"
+            android:layout_height="30dp" android:layout_centerInParent="true"
+            android:id="@+id/actJoPickPhoto_pbLoading"/>
+
+    </RelativeLayout>
+
+    <!--앨범 리스트-->
+    <RelativeLayout
+        android:layout_above="@+id/actJoPickPhoto_rlBottom"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--배경-->
+        <LinearLayout
+            android:alpha="0"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:id="@+id/actPhotoPicker_vAlbumBlack"
+            android:background="#bb000000"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+        </LinearLayout>
+
+
+
+
+        <ScrollView
+            android:visibility="invisible"
+            android:id="@+id/actPhotoPicker_svAlbum"
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="200dp">
+
+            <io.codetail.widget.RevealFrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:visibility="invisible"
+                    android:id="@+id/actPhotoPicker_vgAlbum"
+                    android:paddingBottom="15dp"
+                    android:background="#ffffff"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                </LinearLayout>
+
+            </io.codetail.widget.RevealFrameLayout>
+        </ScrollView>
+
+
+    </RelativeLayout>
+
+
+
+</RelativeLayout>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/itemPhoto_vgParent"
+    android:layout_width="match_parent"
+    android:paddingLeft="0.2dp"
+    android:paddingRight="0.2dp"
+    android:paddingBottom="0.2dp"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+
+    <View
+        android:id="@+id/itemPhoto_vTopLine"
+        android:layout_width="match_parent"
+        android:layout_height="0.2dp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <ImageView
+            android:id="@+id/itemPhoto_ivPhoto"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:layout_gravity="center"/>
+
+
+        <ImageView
+            android:id="@+id/itemPhoto_ivPhotoRepl"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:layout_gravity="center"/>
+
+        <LinearLayout
+            android:visibility="invisible"
+            android:id="@+id/itemPhoto_vPhotoFilter"
+            android:background="@color/colorAccent"
+            android:weightSum="3"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+
+                android:layout_width="0dp"
+                android:adjustViewBounds="true"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_wand"
+                android:layout_gravity="center"/>
+
+        </LinearLayout>
+
+
+        <RelativeLayout
+            android:layout_marginRight="3dp" android:layout_marginTop="3dp"
+            android:id="@+id/itemPhoto_rlbtnChk"
+            android:layout_alignParentRight="true"
+            android:layout_width="26dp"
+            android:layout_height="26dp" >
+
+            <ImageView
+                android:id="@+id/itemPhoto_ivBgUncheck"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" android:background="@drawable/shape_check_circle_gray"/>
+
+            <ImageView
+                android:id="@+id/itemPhoto_ivBgCheck"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" android:background="@drawable/shape_check_circle_blue"/>
+
+
+
+            <ImageView
+                android:id="@+id/itemPhoto_ivIconChk"
+                android:layout_centerInParent="true"
+                android:layout_width="10dp"
+                android:layout_height="wrap_content" android:src="@drawable/ic_check"/>
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+</LinearLayout>
